@@ -37,6 +37,7 @@ $DisksOutOfSpace = Foreach ($Volume in $Volumes) {
 }
  
 if ($DisksOutOfSpace) {
+    Write-Output
     "Some disks are running low on space. Please investigate"
     $DisksOutOfSpace
 }
