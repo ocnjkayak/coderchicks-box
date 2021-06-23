@@ -42,5 +42,6 @@ if ($DisksOutOfSpace) {
     $DisksOutOfSpace
 }
 else {
+    Write-Output
     "Healthy - No disks running out of space"
 }
