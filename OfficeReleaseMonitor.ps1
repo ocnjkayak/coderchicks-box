@@ -19,7 +19,7 @@ else {
         exit 1
     }
     else {
-        Write-Host "Could not find version in the supported versions list. This version is most likely no longer support. Your version is $($ReportedVersion) and the latest version is $($UsedChannel.latestVersion). For all supported versions, see below"
+        Write-Host "Could not find version in the supported versions list. This version is most likely no longer supported. Your version is $($ReportedVersion) and the latest version is $($UsedChannel.latestVersion). For all supported versions, see below"
         $CloudVersionInfo.OfficeVersions
         exit 1
     }
