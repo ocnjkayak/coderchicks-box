@@ -15,7 +15,7 @@ else {
         exit 0
     }
     if ($OurVersion.endOfSupportDate) {
-        Write-Host "this version will not be supported at $($OurVersion.endOfSupportDate). Your version is $($ReportedVersion) and the latest version is $($UsedChannel.latestVersion)"
+        Write-Host "This version will not be supported at $($OurVersion.endOfSupportDate). Your version is $($ReportedVersion) and the latest version is $($UsedChannel.latestVersion)"
         exit 1
     }
     else {
