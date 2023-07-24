@@ -1,7 +1,7 @@
 $ReportedVersion = Get-ItemPropertyValue -Path "HKLM:\SOFTWARE\Microsoft\Office\ClickToRun\Configuration" -Name "VersionToReport"
-$Channel = Get-ItemPropertyValue -Path "HKLM:\SOFTWARE\Microsoft\Office\ClickToRun\Configuration" -Name "CDNBaseUrl" | Select-Object -Last 1
+$Channel = Get-ItemPropertyValue -Path "HKLM:\SOFTWARE\Microsoft\Office\ClickToRun\Configuration" -Name "UpdateChannel" | Select-Object -Last 1
 $CloudVersionInfo = Invoke-RestMethod 'https://clients.config.office.net/releases/v1.0/OfficeReleases'
-$UsedChannel = $cloudVersioninfo | Where-Object { $_.OfficeVersions.cdnBaseURL -eq $channel }
+$UsedChannel = $cloudVersioninfo | Where-Object { $_.OfficeVersions.UpdateChannel -eq $channel }
 
 if ($UsedChannel.latestversion -eq $ReportedVersion) {
     Write-Host "Currently using the latest version of Office in the $($UsedChannel.Channel) Channel: $($ReportedVersion)"
